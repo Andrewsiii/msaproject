@@ -10,7 +10,7 @@ import { SubmitPage } from './Pages/SubmitPage/SubmitPage';
 function App() {
   return (
     <div className="App">
-      <NHeader />
+       <NHeader />
       <Switch>
         <Route path="/home" component={HomePage} />
         <Route path="/submit" component={SubmitPage} />
