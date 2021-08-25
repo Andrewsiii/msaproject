@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - main
-      - feature/*
+      
  
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
       
      
 
-      - name: 'Deploy to Azure Web App'
+      - name: 'Run Azure webapp deploy action using publish profile credentials'
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'asio896web'
