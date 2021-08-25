@@ -1,0 +1,42 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy Node.js app to Azure Web App - asio896web
+
+on:
+  push:
+    branches:
+      - main
+      
+ 
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: "./my-app"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js version
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm run build --if-present
+          npm run test --if-present
+      
+     
+
+      - name: 'Run Azure webapp deploy action using publish profile credentials'
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'asio896web'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_066A51FABFC64FCABB49454628CA8904 }}
+          package: "./my-app/build"
