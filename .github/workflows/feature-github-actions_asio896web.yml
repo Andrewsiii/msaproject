@@ -6,12 +6,16 @@ name: Build and deploy Node.js app to Azure Web App - asio896web
 on:
   push:
     branches:
-      - feature/github-actions
+      - main
+      - feature/*
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: windows-latest
+    default:
+      run:
+        working-directory:"./my-app"
 
     steps:
       - uses: actions/checkout@v2
@@ -53,4 +57,4 @@ jobs:
           app-name: 'asio896web'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_066A51FABFC64FCABB49454628CA8904 }}
-          package: .
+          package: "./my-app/build"
