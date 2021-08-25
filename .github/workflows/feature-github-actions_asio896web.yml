@@ -8,10 +8,10 @@ on:
     branches:
       - main
       - feature/*
-  workflow_dispatch:
+ 
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: windows-latest
     defaults:
       run:
