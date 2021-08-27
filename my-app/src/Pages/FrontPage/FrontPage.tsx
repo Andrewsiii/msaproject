@@ -17,16 +17,26 @@ export default function NHeader() {
     setChecked(true);
   }, []);
 
-    return ( <AppBar className = {classes.appbar} elevation ={0}>
-      <Toolbar className={classes.appbarWrapper}>
-         <h1 className={classes.appbartitle}>
-          Genshin<span> Impact </span>
-          </h1>
-          <IconButton>
-            <SortIcon className={classes.icon}/>
-          </IconButton>
-          </Toolbar>
-</AppBar>
+    return (
+      <div className={classes.bg}>
+      <div className={classes.root} id ="header">
+        <div className={classes.container}>
+        <Collapse
+        in={checked}
+        {...(checked ? { timeout: 1000 } : {})}
+        collapsedHeight={50}
+      >
+            <h1 className={classes.title}> Welcome to <br/> 
+            Genshin<span> Impact!</span>
+            </h1>
+            <IconButton href="/home" component={Link}>
+              <ExpandMoreIcon className={classes.goDown}/>
+            </IconButton>
+            </Collapse>
+            </div>
+            
+      </div>
+      </div>
     );
   }
   
