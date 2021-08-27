@@ -9,6 +9,7 @@ import { SubmitPage } from './Pages/SubmitPage/SubmitPage';
 import ScrollPage from "./components/ScrollPage/ScrollPage";
 import { BrowserRouter } from "react-router-dom";
 import FrontPage from "./Pages/FrontPage/FrontPage";
+
 const useStyles = makeStyles((theme) => ({
   root:{
     minHeight: '100vh',
@@ -24,16 +25,19 @@ function App() {
        <NHeader />
       <Switch>
         <Route path="/home" component={HomePage} />
-        <Route path="/submit" component={SubmitPage} />
+        
       </Switch>
       <Footer />
     </div>*/
     <div className="App">
     <BrowserRouter>
+    
     <NHeader/>
+    
       <Switch>
       <Route exact path="/" component={FrontPage}/>
       <Route path="/home" component={HomePage} />
+      <Route path="/submit" component={SubmitPage} />
       </Switch>
       </BrowserRouter>
       <Footer/>

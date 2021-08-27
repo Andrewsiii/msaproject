@@ -18,9 +18,10 @@ export default function NHeader() {
   }, []);
 
     return ( <AppBar className = {classes.appbar} elevation ={0}>
+      
       <Toolbar className={classes.appbarWrapper}>
-         <h1 className={classes.appbartitle}>
-          Genshin<span> Impact </span>
+      <h1 className={classes.appbartitle}>
+          Genshin Impact 
           </h1>
           <IconButton>
             <SortIcon className={classes.icon}/>
@@ -32,16 +33,10 @@ export default function NHeader() {
   
 const useStyles = makeStyles((theme: Theme) =>
 createStyles({
-  root: {
-   display:'flex',
-   justifyContent:'center',
-   alignItems:'center',
-    height: '100vh',
-    FontFamily:'Nunito',
-  },
+ 
   appbar:{
+    
     background:'none',
-   
   },
   appbarWrapper:{
    width:'80%',
@@ -49,6 +44,9 @@ createStyles({
   },
   appbartitle:{
     flexGrow: 1,
+    marginRight:'80rem',
+    fontFamily:'Genshin',
+    
   },
   title: {
     color:"#FFFFFF",
@@ -71,9 +69,7 @@ createStyles({
     color:"#fff",
     fontSize: '2rem',
   },
-  container: {
-    textAlign: 'center',
-  },
+  
   bg:{
     minHeight: '100vh',
     backgroundImage:`url(${process.env.PUBLIC_URL+'/assets/bg.png'})`,
