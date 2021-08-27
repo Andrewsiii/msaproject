@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const MICROSOFT_LOGO = {
-  name: "Microsoft logo",
-  url: "https://www.microsoft.com/en-nz",
+const Genshin = {
+  name: "Genshin",
+  url: "https://genshin.mihoyo.com/en/",
   logo: genshinImpact,
 };
 
@@ -55,8 +55,8 @@ export const Footer = () => {
         spacing={4}
       >
        <Grid item xs={4}>
-                    <SocialIcon {...MICROSOFT_LOGO} />
-                    {`Copyright © Genshin Impact, 2021`}
+                    <SocialIcon {...Genshin} />
+                    {`Copyright © Mihoyo, 2021`}
                 </Grid>
                 <Grid item xs={6}>
                         {SOCIAL_MEDIA.map((icon: SocialIconProps) => {

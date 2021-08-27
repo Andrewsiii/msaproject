@@ -64,7 +64,7 @@ createStyles({
     color:"#FFFFFF",
     flexGrow: 1,
     fontSize: '4rem',
-    FontFamily:'Nunito',
+    fontFamily:'Genshin',
   },
   colorText:{
     
