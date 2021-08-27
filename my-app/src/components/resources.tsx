@@ -4,31 +4,32 @@ import discordLogo from "./logos/discord_logo.svg";
 import facebookgroupLogo from "./logos/facebookgroup_logo.svg";
 import youtubeLogo from "./logos/youtube_logo.svg";
 import githubLogo from "./logos/github_logo.svg";
+import Twitter from "./logos/Twitter.svg"
 
 export const SOCIAL_MEDIA = [
   {
     name: "Facebook",
-    url: "https://www.facebook.com/studentaccelerator/",
+    url: "https://www.facebook.com/Genshinimpact/",
     logo: facebookLogo,
   },
   {
     name: "Discord",
-    url: "https://discord.gg/c4Y5SAZ",
+    url: "https://discord.com/invite/genshinimpact",
     logo: discordLogo,
   },
   {
-    name: "Facebook Group",
+    name: "Twitter",
     url: "https://www.facebook.com/groups/msaccelerator/",
-    logo: facebookgroupLogo,
+    logo: Twitter,
   },
   {
     name: "YouTube",
-    url: "https://www.youtube.com/channel/UCCegNuS_AZjK-P3ZMN3JXNw",
+    url: "https://www.youtube.com/c/GenshinImpact",
     logo: youtubeLogo,
   },
   {
     name: "GitHub",
-    url: "https://github.com/nzmsa",
+    url: "https://github.com/Andrewsiii/msaproject",
     logo: githubLogo,
   },
 ];

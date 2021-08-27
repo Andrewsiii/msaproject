@@ -1,6 +1,6 @@
 import React from "react";
 import { createStyles, Grid, IconButton, makeStyles, Theme } from "@material-ui/core";
-import microsoftLogo from "./logos/microsoft_logo.svg"
+import genshinImpact from "./logos/Genshin_Impact_logo.svg"
 import { SOCIAL_MEDIA } from "./resources";
 export interface SocialIconProps {
   name: string;
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const MICROSOFT_LOGO = {
   name: "Microsoft logo",
   url: "https://www.microsoft.com/en-nz",
-  logo: microsoftLogo,
+  logo: genshinImpact,
 };
 
 export const Footer = () => {
@@ -56,7 +56,7 @@ export const Footer = () => {
       >
        <Grid item xs={4}>
                     <SocialIcon {...MICROSOFT_LOGO} />
-                    {`Copyright © Microsoft Student Accelerator, 2021. All rights reserved`}
+                    {`Copyright © Genshin Impact, 2021`}
                 </Grid>
                 <Grid item xs={6}>
                         {SOCIAL_MEDIA.map((icon: SocialIconProps) => {
