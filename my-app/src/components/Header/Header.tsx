@@ -23,7 +23,7 @@ export default function Header() {
                         </Drawer>
                     </IconButton>
             <Typography className={classes.title} variant="h6">
-              My super cool web app
+              Genshin Impact
             </Typography>
             <Button color="inherit">Login</Button>
           </Toolbar>
