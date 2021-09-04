@@ -8,8 +8,8 @@ import { AppBar, Collapse, createStyles, Drawer, IconButton, Toolbar } from "@ma
 import { makeStyles, Theme } from "@material-ui/core";
 import SortIcon from '@material-ui/icons/Sort';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-export default function NHeader() {
+import ButtonAppBar from "./components/Header/Header"
+export default function FrontPage() {
   
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
@@ -18,8 +18,11 @@ export default function NHeader() {
   }, []);
 
     return (
+    
       <div className={classes.bg}>
+          <ButtonAppBar/>
       <div className={classes.root} id ="header">
+          
         <div className={classes.container}>
         <Collapse
         in={checked}

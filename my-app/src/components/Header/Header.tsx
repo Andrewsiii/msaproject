@@ -1,80 +1,51 @@
-import React, {  useEffect,useState } from "react";
-import {
-  Divider,
-  Link,
-  ListItemText,
-} from "@material-ui/core";
-import { AppBar, Collapse, createStyles, Drawer, IconButton, Toolbar } from "@material-ui/core";
-import { makeStyles, Theme } from "@material-ui/core";
-import SortIcon from '@material-ui/icons/Sort';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React from 'react';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+      
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    title: {
+      fontFamily:'Genshin',
+      flexGrow: 1,
+    },
+    button: {
+      fontFamily:'Genshin',
+     color: '#FFFF'
+    },
+    bar:{
+      backgroundColor: "transparent"
+    }
+  }),
+);
 
 export default function NHeader() {
-  
   const classes = useStyles();
-  const [checked, setChecked] = useState(false);
-  useEffect(() => {
-    setChecked(true);
-  }, []);
 
-    return ( <AppBar className = {classes.appbar} elevation ={0}>
-      
-      <Toolbar className={classes.appbarWrapper}>
-      <h1 className={classes.appbartitle}>
-          Genshin Impact 
-          </h1>
-          <IconButton>
-            <SortIcon className={classes.icon}/>
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.bar} >
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton}  aria-label="menu">
+            <MenuIcon style={{ color: "#FFFFFF" }} />
           </IconButton>
-          </Toolbar>
-</AppBar>
-    );
-  }
-  
-const useStyles = makeStyles((theme: Theme) =>
-createStyles({
- 
-  appbar:{
-    
-    background:'none',
-  },
-  appbarWrapper:{
-   width:'80%',
-   margin: '0 auto',
-  },
-  appbartitle:{
-    flexGrow: 1,
-    marginRight:'80rem',
-    fontFamily:'Genshin',
-    
-  },
-  title: {
-    color:"#FFFFFF",
-    flexGrow: 1,
-    fontSize: '4rem',
-    FontFamily:'Nunito',
-  },
-  colorText:{
-    
-    color:"#FFFFFF",
-    fontsize:"200rem"
-  },
-  goDown:{
-    display: 'flex',
-    color:"#FFFF",
-    fontSize: '4rem',
-    
-  },
-  icon:{
-    color:"#fff",
-    fontSize: '2rem',
-  },
-  
-  bg:{
-    minHeight: '100vh',
-    backgroundImage:`url(${process.env.PUBLIC_URL+'/assets/bg.png'})`,
-    backgroundRepeat:"no-repeat",
-    backgroundSize:'cover', 
-  }
-})
-);
+          <Typography variant="h6" className={classes.title}>
+            Genshin Impact
+          </Typography>
+          <Button className= {classes.button}>Login</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+}
