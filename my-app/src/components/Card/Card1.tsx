@@ -17,7 +17,7 @@ export default function Card1() {
     const classes = useStyles();
     return(
 <Card className={classes.root}>
-<CardActionArea href="/submit" component={Link}>
+<CardActionArea href="/character" component={Link}>
     <CardMedia
       className={classes.media}
       image="/assets/genshin_30_4K.jpeg"
