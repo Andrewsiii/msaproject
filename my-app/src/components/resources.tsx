@@ -19,7 +19,7 @@ export const SOCIAL_MEDIA = [
   },
   {
     name: "Twitter",
-    url: "https://www.facebook.com/groups/msaccelerator/",
+    url: "https://twitter.com/GenshinImpact",
     logo: Twitter,
   },
   {
