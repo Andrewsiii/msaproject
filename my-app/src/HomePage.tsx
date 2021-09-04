@@ -3,13 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import Card1 from "./components/Card/Card1"
 import Card2 from "./components/Card/Card2"
-import Card from '@material-ui/core'
 import ButtonAppBar from './components/Header/Header';
-import {
-  Divider,
-  Link,
-  ListItemText,
-} from "@material-ui/core";
+
 const useStyles = makeStyles({
 
   bg:{

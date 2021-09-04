@@ -17,7 +17,7 @@ export default function Card2() {
     const classes = useStyles();
     return(
 <Card className={classes.root}>
-<CardActionArea href="/submit" component={Link}>
+<CardActionArea href="/Region" component={Link}>
     <CardMedia
       className={classes.media}
       image="/assets/Sacred_Sakura.png"

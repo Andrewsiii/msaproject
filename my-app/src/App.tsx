@@ -5,9 +5,9 @@ import { Footer } from "./components/Footer";
 import { CssBaseline, makeStyles } from "@material-ui/core";
 import { Route, Switch } from 'react-router';
 import { HomePage } from "./HomePage";
-import { SubmitPage } from './Pages/SubmitPage/SubmitPage';
 import { BrowserRouter } from "react-router-dom";
 import FrontPage from "./FrontPage";
+import { CharacterPage } from "./CharacterPage";
 
 const useStyles = makeStyles((theme) => ({
   root:{
@@ -21,12 +21,14 @@ function App() {
   const classes = useStyles();
   return (
     <div className="App">
+  
     <BrowserRouter>
     
       <Switch>
       <Route exact path="/" component={FrontPage}/>
       <Route path="/home" component={HomePage} />
-      <Route path="/submit" component={SubmitPage} />
+     
+      <Route path="/character" component={CharacterPage} />
       </Switch>
       </BrowserRouter>
       <Footer/>
