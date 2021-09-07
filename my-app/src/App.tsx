@@ -7,7 +7,9 @@ import { Route, Switch } from 'react-router';
 import { HomePage } from "./HomePage";
 import { BrowserRouter } from "react-router-dom";
 import FrontPage from "./FrontPage";
-import { CharacterPage } from "./CharacterPage";
+import { CharacterPage } from "./CharacterListPage";
+import {RegionPage} from "./RegionPage"; 
+import {Page} from "./Page/Page";
 
 const useStyles = makeStyles((theme) => ({
   root:{
@@ -27,7 +29,7 @@ function App() {
       <Switch>
       <Route exact path="/" component={FrontPage}/>
       <Route path="/home" component={HomePage} />
-     
+      <Route path="/Region" component={RegionPage} />
       <Route path="/character" component={CharacterPage} />
       </Switch>
       </BrowserRouter>

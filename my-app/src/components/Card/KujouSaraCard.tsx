@@ -51,13 +51,14 @@ export default function KujouSaraCard() {
           </Typography>
           <Typography className={classes.writing} variant="subtitle1" >
             Electro
+            
           </Typography>
         </CardContent>
 
       </div>
       <CardMedia
         className={classes.cover}
-        image="/assets/KujouSaraCard.png"
+        image="/assets/SaraCard.png"
       />
       
     </Card>
