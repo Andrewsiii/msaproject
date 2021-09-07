@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Drawer } from '@material-ui/core';
+import { Drawer, Link } from '@material-ui/core';
 import { Sidebar } from '../Sidebar/Sidebar';
 
 
@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       fontFamily:'Genshin',
       flexGrow: 1,
+      color:'#FFFF',
+      textSize:200
     },
     button: {
       fontFamily:'Genshin',
@@ -50,9 +52,9 @@ export default function NHeader() {
                             <Sidebar />
                         </Drawer>
                     </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Button className={classes.title}  href="/home" component={Link} >
             Genshin Impact
-          </Typography>
+          </Button>
           <Button className= {classes.button}>Login</Button>
         </Toolbar>
       </AppBar>

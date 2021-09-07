@@ -48,6 +48,7 @@ export default function RazorCard() {
         <CardContent className={classes.content}>
           <Typography className={classes.writing}component="h5" variant="h5">
             Razor
+          
           </Typography>
           <Typography className={classes.writing} variant="subtitle1" >
             Geo

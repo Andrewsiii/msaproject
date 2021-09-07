@@ -47,10 +47,10 @@ export default function RaidenCard() {
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography className={classes.writing}component="h5" variant="h5">
-            Raiden Shogun
+            Raiden
           </Typography>
           <Typography className={classes.writing} variant="subtitle1" >
-            Electro
+            Geo
           </Typography>
         </CardContent>
 
