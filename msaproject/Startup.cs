@@ -27,11 +27,19 @@ namespace msaproject
         }
 
         public IConfiguration Configuration { get; }
-
+        private readonly string _policyName = "CorsPolicy";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy(name: _policyName, builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
             services.AddPooledDbContextFactory<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services
@@ -59,8 +67,8 @@ namespace msaproject
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(_policyName);
 
-            
 
             app.UseEndpoints(endpoints =>
             {
