@@ -9,7 +9,9 @@ import { BrowserRouter } from "react-router-dom";
 import FrontPage from "./FrontPage";
 import { CharacterPage } from "./CharacterListPage";
 import {RegionPage} from "./RegionPage"; 
-import {Page} from "./Page/Page";
+import {Page} from "./Page";
+
+
 
 const useStyles = makeStyles((theme) => ({
   root:{
@@ -31,6 +33,9 @@ function App() {
       <Route path="/home" component={HomePage} />
       <Route path="/Region" component={RegionPage} />
       <Route path="/character" component={CharacterPage} />
+      <Route path="/Albedo" 
+      render={() => <Page card={0} /> }
+      />
       </Switch>
       </BrowserRouter>
       <Footer/>
