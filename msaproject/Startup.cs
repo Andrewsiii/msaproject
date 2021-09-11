@@ -68,10 +68,11 @@ namespace msaproject
 
             app.UseRouting();
             app.UseCors(_policyName);
-
+            
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapGraphQL();
             });
         }

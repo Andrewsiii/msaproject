@@ -7,8 +7,9 @@
 // GraphQL query operation: Albedo
 // ====================================================
 
-export interface Albedo_character {
+export interface Albedo_characters_nodes {
   __typename: "Character";
+  id: string;
   name: string;
   vision: string;
   weapon: string;
@@ -16,6 +17,14 @@ export interface Albedo_character {
   imageURI: string;
 }
 
+export interface Albedo_characters {
+  __typename: "CharacterConnection";
+  /**
+   * A flattened list of the nodes.
+   */
+  nodes: (Albedo_characters_nodes | null)[] | null;
+}
+
 export interface Albedo {
-  character: Albedo_character | null;
+  characters: Albedo_characters | null;
 }

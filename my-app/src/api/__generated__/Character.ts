@@ -17,7 +17,6 @@ export interface Character_character {
 }
 
 export interface Character {
-  characters: any;
   character: Character_character | null;
 }
 

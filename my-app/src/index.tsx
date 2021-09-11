@@ -13,7 +13,7 @@ import {
 } from '@apollo/client'
 const graphQLClient = new ApolloClient({
   
-  uri: "http://localhost:2522/graphql/",
+  uri: "https://msa-proj.azurewebsites.net/graphql/",
   
   cache: new InMemoryCache()
 });
