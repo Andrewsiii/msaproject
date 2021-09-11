@@ -21,7 +21,7 @@
 This project was made by Andrew Sio, for the MSA programme. It is a webapp based off the popular game Genshin Impact. In this webapp, the user will be able to view the data
 of each of the characters and regions within the game. The user will also be able to make comments on each of the specific characters and regions. [Web App](https://asio896web.azurewebsites.net/)
 * The backend of the project can be found in the folder msaproject 
-* The front of the project can be found in the folder my-app
+* The frontend of the project can be found in the folder my-app
 ## Built with
 This project was built with these frameworks 
 * material-ui
@@ -36,11 +36,12 @@ This project was built with these frameworks
    ```sh
    git clone https://github.com/Andrewsiii/msaproject.git
    ```
-2. Install NPM packages
+2. Go into the my-app folder
+3. Install NPM packages
    ```sh
    npm install
    ```
-3. Run reactts
+4. Run reactts
    ```sh
    npm run start
    ```
