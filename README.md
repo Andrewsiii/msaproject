@@ -22,8 +22,8 @@ This project was made by Andrew Sio, for the MSA programme. It is a webapp based
 of each of the characters and regions within the game. The user will also be able to make comments on each of the specific characters and regions.
 ## Built with
 This project was built with these frameworks 
-    * material-ui
-    * react typescript
-    * Azure
-    * GraphQL
-    * ApolloClient
+    * [material-ui]
+    * [react typescript]
+    * [Azure]
+    * [GraphQL]
+    * [ApolloClient]
