@@ -21,9 +21,9 @@
 This project was made by Andrew Sio, for the MSA programme. It is a webapp based off the popular game Genshin Impact. In this webapp, the user will be able to view the data
 of each of the characters and regions within the game. The user will also be able to make comments on each of the specific characters and regions.
 ## Built with
+This project was built with these frameworks 
     * material-ui
     * react typescript
     * Azure
     * GraphQL
     * ApolloClient
-    * [Bootstrap](https://getbootstrap.com)
