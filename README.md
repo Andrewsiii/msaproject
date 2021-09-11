@@ -15,7 +15,7 @@
       </ul>
     </li>
     <li><a href="#To be Implemented">Usage</a></li>
-    
+    </details>
     
 # About the project
 This project was made by Andrew Sio, for the MSA programme. It is a webapp based off the popular game Genshin Impact. In this webapp, the user will be able to view the data
