@@ -29,4 +29,19 @@ This project was built with these frameworks
 * ApolloClient
     
 ## Getting Started
-    
+### Installation
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Andrewsiii/msaproject.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run reactts
+   ```sh
+   npm run start
+   ```
+## To be implemented
+* Azure Devops to run without local server
+* ApolloClient queries containing info on each character
