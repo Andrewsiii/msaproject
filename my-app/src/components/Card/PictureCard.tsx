@@ -11,15 +11,20 @@ import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
-    marginLeft:300,
+    minWidth:300,
+    marginRight:50,
+    marginLeft:50,
     marginTop:100,
-    maxWidth: 500,
+    maxWidth: 600,
     border: 30,
     borderColor: "green",
     background:"rgba(0,0,0,0.4)"
   },
   media: {
-    height: 430,
+    justifyContent:"center",
+    alignItems: 'center',
+    flex:1,
+    height: 450,
   },
   writing:{
     fontSize:"1.5rem",

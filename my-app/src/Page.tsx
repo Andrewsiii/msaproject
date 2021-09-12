@@ -24,7 +24,8 @@ const useStyles = makeStyles({
   },
   container:{
     textAlign: 'center',
-  }
+  },
+  
  
 });
 const Get_Char = gql`
@@ -54,10 +55,25 @@ export const Page = ({ card }: FeedPageProps) => {
   const {loading, error, data} = useQuery<Characters>(Get_Char)
  useEffect(() => {
   console.log(data)
+  if(loading){
+  <h1> Loading... </h1>
+  }
   if(!loading && !error) {
     setCards(data!.characters!.nodes!.map((character : Characters_characters_nodes) => {
-        return <Grid>
-          <Grid item xs={6} sm ={6} md = {6} lg = {6}>
+        return <Grid
+        
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="flex-start"
+      >
+          
+         <Grid item xs={12} sm ={12} md = {6} lg = {6}>
+         <PictureCard cardMedia= {character.imageURI} 
+         cardTitle= {character.name}  /> 
+          </Grid>
+          <Grid item xs={12} sm ={12} md = {6} lg = {6}
+          >
            <CharacterText
             cardwep = {character.weapon}
             cardTitle={character.name}
@@ -66,10 +82,27 @@ export const Page = ({ card }: FeedPageProps) => {
             url={character.imageURI}
          />
          </Grid>
-         <Grid item xs={6} sm ={6} md = {6} lg = {6}>
-         <PictureCard cardMedia= {character.imageURI} 
-         cardTitle= {character.name}  /> 
-          </Grid>
+         <Grid item xs={12} sm ={12} md = {12} lg = {12}
+          >
+           <CharacterText
+            cardwep = {character.weapon}
+            cardTitle={character.name}
+            subHeader={character.vision}
+            cardback={character.background}
+            url={character.imageURI}
+         />
+         </Grid>
+         <Grid item xs={12} sm ={12} md = {12} lg = {12}
+          >
+           <CharacterText
+            cardwep = {character.weapon}
+            cardTitle={character.name}
+            subHeader={character.vision}
+            cardback={character.background}
+            url={character.imageURI}
+         />
+         </Grid>
+         
          </Grid>
        
     }))

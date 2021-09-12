@@ -41,6 +41,7 @@ export default function Card1() {
 const useStyles = makeStyles({
     root: {
       alignItems:'center',
+      minWidth:500,
       maxWidth: 700,
       marginLeft:50,
       marginTop: 70,

@@ -6,12 +6,20 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
     root: {
+      marginBottom:50,
+      marginLeft:50,
+      marginTop:100,
+      marginRight:50,
       minWidth: 275,
+      background:"rgba(0,0,0,0.4)"
     },
     title: {
       fontSize: 14,
+      fontFamily:'Genshin',
+      color:'#FFFFFFFF',
     },
     pos: {
+      
       marginBottom: 12,
     },
   });
@@ -33,10 +41,10 @@ const CharacterText= ({cardwep,cardback, cardTitle, subHeader, url} : CharacterT
             </Typography>
             <Typography variant="h5" component="h2">
             </Typography>
-            <Typography className={classes.pos} color="textSecondary">
+            <Typography className={classes.title}  color="textSecondary">
               {subHeader}
             </Typography>
-            <Typography variant="body2" component="p">
+            <Typography className={classes.title}  component="p">
               well meaning and kindly.
               <br />
               {'"a benevolent smile"'}
