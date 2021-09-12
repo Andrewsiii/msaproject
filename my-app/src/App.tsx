@@ -10,6 +10,7 @@ import FrontPage from "./FrontPage";
 import { CharacterPage } from "./CharacterListPage";
 import {RegionPage} from "./RegionPage"; 
 import {Page} from "./Page";
+import { isNamespaceExport } from "typescript";
 
 
 
@@ -23,6 +24,11 @@ const useStyles = makeStyles((theme) => ({
 }))
 function App() {
   const classes = useStyles();
+  const names = [
+     "Albedo","Amber","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","HuTao","Jean","Kazuha","Kaeya","Ayaka",
+     "Keqing","Klee","Lisa","Ningguang","Noelle","Qiqi","Razor","Rosaria","Sayu","Sucrose","Tartaglia","Traveler","Venti","Xiangling","Xiao",
+     "Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli","Mona","Raiden","KujouSara","Aloy"
+  ]
   return (
     <div className="App">
   
@@ -33,9 +39,10 @@ function App() {
       <Route path="/home" component={HomePage} />
       <Route path="/Region" component={RegionPage} />
       <Route path="/character" component={CharacterPage} />
-      <Route path="/Albedo" 
-      render={() => <Page card={0} /> }
-      />
+      {names.map((name,index) => (<Route path={"/" +`${name}`}
+      render={() => <Page card= {index} /> }
+      />)) }
+      
       </Switch>
       </BrowserRouter>
       <Footer/>

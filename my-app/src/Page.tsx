@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import {gql, useQuery} from '@apollo/client';
-import { Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
 import CharacterText from './AlbedoText';
-
+import PictureCard from './components/Card/PictureCard'
+import NHeader from './components/Header/Header';
 
 const useStyles = makeStyles({
 
@@ -26,9 +27,9 @@ const useStyles = makeStyles({
   }
  
 });
-const ALBEDO = gql`
+const Get_Char = gql`
 query Albedo{
-    characters{
+    characters(first:40){
       nodes{
         id
         name
@@ -50,18 +51,26 @@ query Albedo{
 export const Page = ({ card }: FeedPageProps) => {
   const classes = useStyles();
   const [cards, setCards] = React.useState<JSX.Element[]>([]);
-  const {loading, error, data} = useQuery<Characters>(ALBEDO)
+  const {loading, error, data} = useQuery<Characters>(Get_Char)
  useEffect(() => {
   console.log(data)
   if(!loading && !error) {
     setCards(data!.characters!.nodes!.map((character : Characters_characters_nodes) => {
-        return <CharacterText
+        return <Grid>
+          <Grid item xs={6} sm ={6} md = {6} lg = {6}>
+           <CharacterText
             cardwep = {character.weapon}
             cardTitle={character.name}
             subHeader={character.vision}
             cardback={character.background}
             url={character.imageURI}
          />
+         </Grid>
+         <Grid item xs={6} sm ={6} md = {6} lg = {6}>
+         <PictureCard cardMedia= {character.imageURI} 
+         cardTitle= {character.name}  /> 
+          </Grid>
+         </Grid>
        
     }))
     
@@ -71,11 +80,14 @@ export const Page = ({ card }: FeedPageProps) => {
  console.log(data)
 return (
    
-    <div>
+    <div className={classes.bg}>
+    <NHeader/>
     
+   
      {cards[card]} 
-
+    
      
+    
    
         </div>
   );
