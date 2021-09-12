@@ -40,6 +40,7 @@ export default function Card2() {
 }
 const useStyles = makeStyles({
     root: {
+      minWidth:700,
       alignItems:'center',
       maxWidth: 700,
       marginLeft:50,
