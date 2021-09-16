@@ -9,6 +9,8 @@ import { CharacterListPage } from "./CharacterListPage";
 import {RegionPage} from "./RegionPage"; 
 import {Page} from "./Page";
 
+import { RegionDescPage } from "./RegionDescPage";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,10 +24,11 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
   const names = [
-     "Albedo","Amber","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","HuTao","Jean","Kazuha","Kaeya","Ayaka",
+     "Albedo","Amber","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","Hu Tao","Jean","Kaedehara Kazuha","Kaeya","Kamisato Ayaka",
      "Keqing","Klee","Lisa","Ningguang","Noelle","Qiqi","Razor","Rosaria","Sayu","Sucrose","Tartaglia","Traveler","Venti","Xiangling","Xiao",
-     "Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli","Mona","Raiden","KujouSara","Aloy"
+     "Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli","Mona","Raiden Shogun","Kujou Sara","Aloy"
   ]
+  const regions = ["Mondstadt","Inazuma","Liyue"]
   return (
     <div className="App">
   
@@ -39,6 +42,9 @@ function App() {
       <Route path="/character"   render={() => <CharacterListPage /> } />
       {names.map((name,index) => (<Route path={"/" +`${name}`}
       render={() => <Page card= {index} /> }
+      />)) }
+      {regions.map((region,index) => (<Route path={"/" +`${region}`}
+      render={() => <RegionDescPage card={index} /> }
       />)) }
       
       </Switch>

@@ -7,6 +7,11 @@
 // GraphQL query operation: Character
 // ====================================================
 
+export interface Character_character_comments {
+  __typename: "Comment";
+  content: string;
+}
+
 export interface Character_character {
   __typename: "Character";
   name: string;
@@ -16,6 +21,8 @@ export interface Character_character {
   imageURI: string;
   food: string;
   characterCard: string;
+  description: string;
+  comments: Character_character_comments[];
 }
 
 export interface Character {

@@ -28,22 +28,7 @@ const useStyles = makeStyles({
   }
  
 });
-const Get_Char = gql`
-query Albedo{
-    characters(first:40){
-      nodes{
-        id
-        name
-        vision 
-        weapon 
-        background
-        imageURI
-        food
-        characterCard
-      }
-    }
-  }
-  `
+
  
  export const CharacterListPage = () => {
    const classes = useStyles();
@@ -58,8 +43,6 @@ query Albedo{
        cardTitle= {character.name} 
        cardVision={character.vision} /> 
       
-         
-        
      }))
      
  }

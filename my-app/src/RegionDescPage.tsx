@@ -6,9 +6,10 @@ import { Characters, Characters_characters_nodes } from './api/__generated__/Cha
 import CharacterText from './CharacterText';
 import PictureCard from './components/Card/PictureCard'
 import NHeader from './components/Header/Header';
-import { CHARACTERS } from './api/queries';
+import { CHARACTERS, TOWNS } from './api/queries';
 import CharacterDesc from './components/Card/CharacterDesc';
 import CommentBox from './components/Card/CommentBox';
+import { towns, towns_towns_nodes } from './api/__generated__/towns';
 
 const useStyles = makeStyles({
 
@@ -38,17 +39,17 @@ const useStyles = makeStyles({
   
 
  
-export const Page = ({ card }: FeedPageProps) => {
+export const RegionDescPage = ({ card }: FeedPageProps) => {
   const classes = useStyles();
   const [cards, setCards] = React.useState<JSX.Element[]>([]);
-  const {loading, error, data} = useQuery<Characters>(CHARACTERS)
+  const {loading, error, data} = useQuery<towns>(TOWNS)
  useEffect(() => {
   console.log(data)
   if(loading){
   <h1> Loading... </h1>
   }
   if(!loading && !error) {
-    setCards(data!.characters!.nodes!.map((character : Characters_characters_nodes) => {
+    setCards(data!.towns!.nodes!.map((town : towns_towns_nodes) => {
         return <Grid
         key="{Grid}"
         container
@@ -58,32 +59,17 @@ export const Page = ({ card }: FeedPageProps) => {
       >
           
          <Grid item xs={12} sm ={12} md = {6} lg = {6}>
-         <PictureCard cardMedia= {character.imageURI} 
-         cardTitle= {character.name}  /> 
+         <PictureCard cardMedia= {town.description} 
+         cardTitle= {town.name}   /> 
           </Grid>
           <Grid item xs={12} sm ={12} md = {6} lg = {6}
           >
-           <CharacterText
-            cardwep = {character.weapon}
-            cardTitle={character.name}
-            subHeader={character.vision}
-            cardback={character.background}
-            food={character.food}
-
-         />
-         </Grid>
-         <Grid item xs={12} sm ={12} md = {12} lg = {12}
-          >
            <CharacterDesc
-            Description={character.description}
+            Description={town.description}
          />
          </Grid>
-         <Grid item xs={12} sm ={12} md = {12} lg = {12}
-          >
-           <CommentBox
-            comment={character.description}
-         />
-         </Grid>
+        
+         
          
          </Grid>
        
