@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {gql, useQuery} from '@apollo/client';
-import { Grid } from '@material-ui/core';
+import { CircularProgress, Grid } from '@material-ui/core';
 import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
 import CharacterText from './AlbedoText';
 import PictureCard from './components/Card/PictureCard'
 import NHeader from './components/Header/Header';
+import { CHARACTERS } from './api/queries';
 
 const useStyles = makeStyles({
 
@@ -27,20 +28,7 @@ const useStyles = makeStyles({
   
  
 });
-const Get_Char = gql`
-query Albedo{
-    characters(first:40){
-      nodes{
-        id
-        name
-        vision 
-        weapon 
-        background
-        imageURI
-      }
-    }
-  }
-  `
+
   export interface FeedPageProps {
     card: number;
   }
@@ -51,7 +39,7 @@ query Albedo{
 export const Page = ({ card }: FeedPageProps) => {
   const classes = useStyles();
   const [cards, setCards] = React.useState<JSX.Element[]>([]);
-  const {loading, error, data} = useQuery<Characters>(Get_Char)
+  const {loading, error, data} = useQuery<Characters>(CHARACTERS)
  useEffect(() => {
   console.log(data)
   if(loading){
@@ -116,7 +104,7 @@ return (
     <NHeader/>
     
    
-     {cards[card]} 
+     {cards.length === 0 ? <CircularProgress /> :cards[card]} 
     
      
     

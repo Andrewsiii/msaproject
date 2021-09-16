@@ -7,6 +7,7 @@ import  CharacterListCard  from './components/Card/CharacterListCard';
 import NHeader from './components/Header/Header';
 
 import CharacterList from './components/Card/CharacterList';
+import { CHARACTER, CHARACTERS } from './api/queries';
 const useStyles = makeStyles({
 
   bg:{
@@ -37,6 +38,8 @@ query Albedo{
         weapon 
         background
         imageURI
+        food
+        characterCard
       }
     }
   }
@@ -45,13 +48,13 @@ query Albedo{
  export const CharacterListPage = () => {
    const classes = useStyles();
    const [cards, setCards] = React.useState<JSX.Element[]>([]);
-   const {loading, error, data} = useQuery<Characters>(Get_Char)
+   const {loading, error, data} = useQuery<Characters>(CHARACTERS)
   useEffect(() => {
  
   
    if(!loading && !error) {
      setCards(data!.characters!.nodes!.map((character : Characters_characters_nodes) => {
-         return <CharacterListCard cardMedia= {character.imageURI} 
+         return <CharacterListCard cardMedia= {character.characterCard} 
        cardTitle= {character.name} 
        cardVision={character.vision} /> 
       

@@ -9,7 +9,8 @@
        string? Background,
        string? ImageURI,
         string? CharacterCard,
-        string? food
+        string? food,
+        string? Description
   
     );
 }

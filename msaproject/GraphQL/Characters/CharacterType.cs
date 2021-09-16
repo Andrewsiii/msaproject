@@ -25,7 +25,8 @@ namespace msaproject.GraphQL.Characters
             descriptor.Field(c => c.ImageURI).Type<NonNullType<StringType>>();
             descriptor.Field(c => c.food).Type<NonNullType<StringType>>();
             descriptor.Field(c => c.CharacterCard).Type<NonNullType<StringType>>();
-        
+            descriptor.Field(c => c.Description).Type<NonNullType<StringType>>();
+
             descriptor
                .Field(c => c.Comments)
                .ResolveWith<Resolver>(r => r.GetComments(default!, default!, default))

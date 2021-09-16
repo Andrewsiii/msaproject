@@ -23,6 +23,8 @@ export interface Characters_characters_nodes {
   weapon: string;
   background: string;
   imageURI: string;
+  food: string;
+  characterCard: string;
 }
 
 export interface Characters_characters {
