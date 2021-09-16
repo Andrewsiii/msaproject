@@ -30,6 +30,9 @@ namespace msaproject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CharacterCard")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageURI")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -47,6 +50,9 @@ namespace msaproject.Migrations
 
                     b.Property<string>("Weapon")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("food")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

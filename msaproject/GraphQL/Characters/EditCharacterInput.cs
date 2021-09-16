@@ -7,6 +7,9 @@
         string? Vision,
        string? Weapon,
        string? Background,
-       string? ImageURI
+       string? ImageURI,
+        string? CharacterCard,
+        string? food
+  
     );
 }

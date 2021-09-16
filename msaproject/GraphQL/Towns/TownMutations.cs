@@ -4,9 +4,7 @@ using msaproject.Data;
 using msaproject.Extensions;
 using msaproject.GraphQL.Towns;
 using msaproject.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -35,7 +33,7 @@ namespace msatown.GraphQL.Characters
             var town = await context.Towns.FindAsync(int.Parse(input.TownId));
             town.Name = input.Name ?? town.Name;
             town.Description = input.Description ?? town.Description;
-          
+            context.Towns.Add(town);
             await context.SaveChangesAsync(cancellationToken);
             return town;
         }

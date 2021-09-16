@@ -21,7 +21,10 @@ namespace msaproject.GraphQL.Characters
                 Vision = input.Vision,
                 Weapon = input.Weapon,
                 Background = input.Background,
-                ImageURI = input.ImageURI
+                ImageURI = input.ImageURI,
+                food = input.food,
+                CharacterCard = input.CharacterCard,
+            
             };
             context.Characters.Add(character);
             await context.SaveChangesAsync(cancellationToken);
@@ -37,7 +40,9 @@ namespace msaproject.GraphQL.Characters
             character.Background = input.Background ?? character.Background;
             character.ImageURI = input.ImageURI ?? character.ImageURI;
             character.Weapon = input.Weapon ?? character.Weapon;
-
+            character.food = input.food ?? character.food;
+            character.Weapon = input.CharacterCard ?? character.CharacterCard;
+          
             await context.SaveChangesAsync(cancellationToken);
             return character;
         }
