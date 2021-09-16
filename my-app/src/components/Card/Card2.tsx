@@ -30,8 +30,7 @@ export default function Card2() {
         Regions
       </Typography>
       <Typography variant="body2" color="textSecondary" component="p" className = {classes.description}>
-        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-        across all continents except Antarctica
+        Explore the vast world of Teyvat and the various regions of Genshin Impact
       </Typography>
     </CardContent>
     </CardActionArea>

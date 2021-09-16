@@ -30,8 +30,7 @@ export default function Card1() {
         Characters
       </Typography>
       <Typography variant="body2" color="textSecondary" component="p" className = {classes.description}>
-        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-        across all continents except Antarctica
+        View the playable characters currently in Genshin Impact
       </Typography>
     </CardContent>
     </CardActionArea>

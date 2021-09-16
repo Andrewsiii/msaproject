@@ -14,6 +14,11 @@ query Characters{
         imageURI
         food
         characterCard
+        description
+        comments{
+          content
+          created
+        }
       }
     }
   }
@@ -30,7 +35,28 @@ export const CHARACTER = gql`
         imageURI
         food
         characterCard
+        description
+        comments{
+          content
+        }
         }
     }
     `
+export const TOWNS = gql`
+query towns{
+  towns(first:4){
+    edges{
+        cursor
+    } 
+    nodes{
+        name
+        description
+        comments{
+        content
+        created
+          }
+        }
+    }
+  }
 
+`

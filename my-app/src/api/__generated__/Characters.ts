@@ -15,6 +15,12 @@ export interface Characters_characters_edges {
   cursor: string;
 }
 
+export interface Characters_characters_nodes_comments {
+  __typename: "Comment";
+  content: string;
+  created: any;
+}
+
 export interface Characters_characters_nodes {
   __typename: "Character";
   id: string;
@@ -25,6 +31,8 @@ export interface Characters_characters_nodes {
   imageURI: string;
   food: string;
   characterCard: string;
+  description: string;
+  comments: Characters_characters_nodes_comments[];
 }
 
 export interface Characters_characters {

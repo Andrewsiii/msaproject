@@ -14,7 +14,7 @@ const useStyles = makeStyles({
       background:"rgba(0,0,0,0.4)"
     },
     title: {
-      fontSize: 14,
+      fontSize: 25,
       fontFamily:'Genshin',
       color:'#FFFFFFFF',
     },
@@ -29,9 +29,9 @@ export interface CharacterTextProps {
     subHeader: string;
     cardwep: string;
     cardback:string;
-    url: string;
+    food:string;
 };
-const CharacterText= ({cardwep,cardback, cardTitle, subHeader, url} : CharacterTextProps) => {
+const CharacterText= ({cardwep,cardback, cardTitle, subHeader,food} : CharacterTextProps) => {
     const classes = useStyles();
     return (
         <Card className={classes.root}>
@@ -44,15 +44,19 @@ const CharacterText= ({cardwep,cardback, cardTitle, subHeader, url} : CharacterT
             <Typography className={classes.title}  color="textSecondary">
               {subHeader}
             </Typography>
+            <CardActionArea href={cardback}>
             <Typography className={classes.title}  component="p">
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
+              Nation: {cardback}
+            </Typography>
+            </CardActionArea>
+            <Typography className={classes.title}  component="p">
+              Weapon: {cardwep}
+            </Typography>
+            <Typography className={classes.title}  component="p">
+              Favourite Food : {food}
             </Typography>
           </CardContent>
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
+         
         </Card>
       );
 }

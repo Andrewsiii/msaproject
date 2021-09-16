@@ -25,9 +25,9 @@ const useStyles = makeStyles({
   },
 });
 const names = [
-  "Albedo","Amber","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","HuTao","Jean","Kazuha","Kaeya","Ayaka",
+  "Albedo","Amber","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","Hu Tao","Jean","Kaedehara Kazuha","Kaeya","Kamisato Ayaka",
   "Keqing","Klee","Lisa","Ningguang","Noelle","Qiqi","Razor","Rosaria","Sayu","Sucrose","Tartaglia","Traveler","Venti","Xiangling","Xiao",
-  "Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli","Mona","Raiden","KujouSara","Aloy"
+  "Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli","Mona","Raiden Shogun","Kujou Sara","Aloy"
 ]
 export const Sidebar = () => {
   const classes = useStyles();
