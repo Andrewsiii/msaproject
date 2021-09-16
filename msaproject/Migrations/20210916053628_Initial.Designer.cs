@@ -10,7 +10,7 @@ using msaproject.Data;
 namespace msaproject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210827030641_Initial")]
+    [Migration("20210916053628_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,9 @@ namespace msaproject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("CharacterCard")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImageURI")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -49,6 +52,9 @@ namespace msaproject.Migrations
 
                     b.Property<string>("Weapon")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("food")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

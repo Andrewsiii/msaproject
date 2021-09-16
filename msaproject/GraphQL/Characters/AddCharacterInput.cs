@@ -8,6 +8,9 @@ namespace msaproject.GraphQL.Characters
         string Vision,
        string Weapon,
        string Background,
-       string ImageURI
+       string ImageURI,
+       string food,
+       string CharacterCard
+       
     );
 }

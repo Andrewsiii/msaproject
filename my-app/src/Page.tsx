@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
 import {gql, useQuery} from '@apollo/client';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
 import CharacterText from './AlbedoText';
 import PictureCard from './components/Card/PictureCard'
@@ -61,7 +60,7 @@ export const Page = ({ card }: FeedPageProps) => {
   if(!loading && !error) {
     setCards(data!.characters!.nodes!.map((character : Characters_characters_nodes) => {
         return <Grid
-        
+        key="{Grid}"
         container
         direction="row"
         justifyContent="center"

@@ -1,10 +1,11 @@
-import React from 'react';
+
 import { Theme, createStyles, makeStyles, useTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
 import Typography from '@material-ui/core/Typography';
+import { CardActionArea } from '@material-ui/core';
 
 
 
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
       
     },
     cover: {
-      width: 400,
+      width: 1000,
     },
     writing:{
         color:'#FFFFFF',
@@ -35,31 +36,40 @@ const useStyles = makeStyles((theme: Theme) =>
     
   }),
 );
+export interface CharacterTextProps {
+   
+    cardTitle: string;
+    cardMedia: string;
+    cardVision: string;
+};
 
-export default function KaeyaCard() {
+const CharacterListCard= ({ cardMedia, cardTitle,cardVision} : CharacterTextProps) => {
+   
   const classes = useStyles();
-  const theme = useTheme();
+  
 
   return (
-    
+    <CardActionArea href={cardTitle} >
     <Card  className={classes.root}>
      
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography className={classes.writing}component="h5" variant="h5">
-            Kaeya
+           {cardTitle}
           </Typography>
           <Typography className={classes.writing} variant="subtitle1" >
-            Cryo
+           {cardVision}
           </Typography>
         </CardContent>
 
       </div>
       <CardMedia
         className={classes.cover}
-        image="/assets/KaeyaCard.png"
+        image={cardMedia}
       />
       
     </Card>
+    </CardActionArea>
   );
 }
+export default CharacterListCard;
