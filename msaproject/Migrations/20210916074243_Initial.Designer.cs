@@ -10,7 +10,7 @@ using msaproject.Data;
 namespace msaproject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210916053628_Initial")]
+    [Migration("20210916074243_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -75,6 +75,7 @@ namespace msaproject.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Created")

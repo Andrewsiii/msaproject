@@ -14,6 +14,8 @@ export interface Character_character {
   weapon: string;
   background: string;
   imageURI: string;
+  food: string;
+  characterCard: string;
 }
 
 export interface Character {

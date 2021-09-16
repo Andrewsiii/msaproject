@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 export const CHARACTERS = gql`
 query Characters{
-  characters{
+  characters(first:40){
     edges{
         cursor
     } 
@@ -12,13 +12,14 @@ query Characters{
         weapon 
         background
         imageURI
+        food
+        characterCard
       }
     }
   }
 
   
 `
-
 export const CHARACTER = gql`
     query Character($id: ID){
         character(id: $id){
@@ -27,7 +28,9 @@ export const CHARACTER = gql`
         weapon 
         background
         imageURI
+        food
+        characterCard
         }
     }
-  
     `
+

@@ -29,6 +29,7 @@ namespace msaproject.GraphQL.Comments
             await context.SaveChangesAsync(cancellationToken);
             return comment;
         }
+
         [UseAppDbContext]
         public async Task<Comment> EditCommentAsync(EditCommentInput input, [ScopedService] AppDbContext context, CancellationToken cancellationToken)
         {

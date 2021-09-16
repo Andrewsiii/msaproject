@@ -10,7 +10,7 @@ namespace msaproject.GraphQL.Characters
        string Background,
        string ImageURI,
        string food,
-       string CharacterCard
-       
+       string CharacterCard,
+       string Description
     );
 }
