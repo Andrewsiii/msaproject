@@ -1,7 +1,9 @@
 ﻿using HotChocolate;
 using HotChocolate.Types;
+using Microsoft.EntityFrameworkCore;
 using msaproject.Data;
 using msaproject.GraphQL.Characters;
+using msaproject.GraphQL.Comments;
 using msaproject.Models;
 using System;
 using System.Collections.Generic;
@@ -18,22 +20,31 @@ namespace msaproject.GraphQL.Towns
             descriptor.Field(t => t.Id).Type<NonNullType<IdType>>();
             descriptor.Field(t => t.Name).Type<NonNullType<StringType>>();
             descriptor.Field(t => t.Description).Type<NonNullType<StringType>>();
-            
-             descriptor
+            descriptor.Field(t => t.ImageURL).Type<NonNullType<StringType>>();
+            descriptor
                  .Field(t => t.Character)
-                 .ResolveWith<Resolver>(r => r.GetCharacter(default!, default!, default))
+                 .ResolveWith<Resolvers>(r => r.GetCharacter(default!, default!, default))
                  .UseDbContext<AppDbContext>()
                  .Type<NonNullType<CharacterType>>();
-
-         }
-         private class Resolver
+            descriptor
+                .Field(p => p.Comments)
+                .ResolveWith<Resolvers>(r => r.GetComments(default!, default!, default))
+                .UseDbContext<AppDbContext>()
+                .Type<NonNullType<ListType<NonNullType<CommentType>>>>();
+        }
+         private class Resolvers
          {
              public async Task<Character> GetCharacter(Town town, [ScopedService] AppDbContext context,
                  CancellationToken cancellationToken)
              {
                  return await context.Characters.FindAsync(new object[] { town.CharacterId }, cancellationToken);
              }
-            
+            public async Task<IEnumerable<Comment>> GetComments(Town town, [ScopedService] AppDbContext context,
+                CancellationToken cancellationToken)
+            {
+                return await context.Comments.Where(c => c.TownId == town.Id).ToArrayAsync(cancellationToken);
+            }
+
         }
         }
     }

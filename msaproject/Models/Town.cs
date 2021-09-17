@@ -14,7 +14,7 @@ namespace msaproject.Models
         public string Name { get; set; } = null!;
         [Required]
         public string Description { get; set; } = null!;
-
+        public string ImageURL { get; set; }
         public int CharacterId { get; set; } 
         public Character Character { get; set; } = null!;
         public ICollection<Character> Characters { get; set; } = new List<Character>();

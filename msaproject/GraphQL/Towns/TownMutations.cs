@@ -21,7 +21,7 @@ namespace msatown.GraphQL.Characters
                 Name = input.Name,
                 Description = input.Description,
                 CharacterId = int.Parse(input.CharacterId),
-              
+                ImageURL = input.ImageURL
             };
             context.Towns.Add(town);
             await context.SaveChangesAsync(cancellationToken);
@@ -33,6 +33,7 @@ namespace msatown.GraphQL.Characters
             var town = await context.Towns.FindAsync(int.Parse(input.TownId));
             town.Name = input.Name ?? town.Name;
             town.Description = input.Description ?? town.Description;
+            town.ImageURL = input.ImageURL ?? town.ImageURL;
             context.Towns.Add(town);
             await context.SaveChangesAsync(cancellationToken);
             return town;
