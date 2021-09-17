@@ -4,6 +4,7 @@
     (
         string Name,
         string Description,
-        string CharacterId
+        string CharacterId,
+        string ImageURL
     );
 }

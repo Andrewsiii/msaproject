@@ -8,7 +8,7 @@ namespace msaproject.GraphQL.Towns
        
         string TownId,
         string? Name,
-        string? Description
-   
+        string? Description,
+        string? ImageURL
     );
 }

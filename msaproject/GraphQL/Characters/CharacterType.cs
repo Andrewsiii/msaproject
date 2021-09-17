@@ -4,8 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using msaproject.Data;
 using msaproject.Extensions;
 using msaproject.GraphQL.Comments;
+using msaproject.GraphQL.Towns;
 using msaproject.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -28,14 +28,25 @@ namespace msaproject.GraphQL.Characters
             descriptor.Field(c => c.Description).Type<NonNullType<StringType>>();
 
             descriptor
+                .Field(s => s.Towns)
+                .ResolveWith<Resolvers>(r => r.GetTowns(default!, default!, default))
+                .UseDbContext<AppDbContext>()
+                .Type<NonNullType<ListType<NonNullType<TownType>>>>();
+
+            descriptor
                .Field(c => c.Comments)
-               .ResolveWith<Resolver>(r => r.GetComments(default!, default!, default))
+               .ResolveWith<Resolvers>(r => r.GetComments(default!, default!, default))
                .UseAppDbContext<AppDbContext>()
                .Type<NonNullType<ListType<NonNullType<CommentType>>>>();
         }
-        private class Resolver
+        private class Resolvers
         {
-            
+            public async Task<IEnumerable<Town>> GetTowns(Character character, [ScopedService] AppDbContext context,
+                CancellationToken cancellationToken)
+            {
+                return await context.Towns.Where(c => c.CharacterId == character.Id).ToArrayAsync(cancellationToken);
+            }
+
 
             public async Task<IEnumerable<Comment>> GetComments(Character character, [ScopedService] AppDbContext context,
                CancellationToken cancellationToken)
