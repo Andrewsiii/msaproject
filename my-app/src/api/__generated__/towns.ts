@@ -25,7 +25,8 @@ export interface towns_towns_nodes {
   __typename: "Town";
   name: string;
   description: string;
-  comments: (towns_towns_nodes_comments | null)[] | null;
+  imageURL: string;
+  comments: towns_towns_nodes_comments[];
 }
 
 export interface towns_towns {

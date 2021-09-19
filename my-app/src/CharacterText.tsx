@@ -33,6 +33,7 @@ export interface CharacterTextProps {
 };
 const CharacterText= ({cardwep,cardback, cardTitle, subHeader,food} : CharacterTextProps) => {
     const classes = useStyles();
+   
     return (
         <Card className={classes.root}>
           <CardContent>

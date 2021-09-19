@@ -19,8 +19,6 @@ namespace msaproject.GraphQL.Comments
         {
             descriptor.Field(c => c.Id).Type<NonNullType<IdType>>();
             descriptor.Field(c => c.Content).Type<NonNullType<StringType>>();
-         
-        
             descriptor.Field(p => p.Modified).Type<NonNullType<DateTimeType>>();
             descriptor.Field(p => p.Created).Type<NonNullType<DateTimeType>>();
             descriptor

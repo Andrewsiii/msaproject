@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 export const CHARACTERS = gql`
 query Characters{
-  characters(first:40){
+  characters(first:10){
     edges{
         cursor
     } 
@@ -51,6 +51,7 @@ query towns{
     nodes{
         name
         description
+        imageURL
         comments{
         content
         created
