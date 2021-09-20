@@ -30,10 +30,10 @@ function App() {
       <Route path="/home" component={HomePage} />
       <Route path="/Region" component={RegionPage} />
       <Route path="/character"   render={() => <CharacterListPage /> } />
-      {names.map((name,index) => (<Route path={name}
+      {names.map((name,index) => (<Route path={"/" +`${name}`}
       render={() => <Page card= {index} /> }
       />)) }
-      {regions.map((region,index) => (<Route path={region}
+      {regions.map((region,index) => (<Route path={"/" +`${region}`}
       render={() => <RegionDescPage card={index} /> }
       />)) }
       
