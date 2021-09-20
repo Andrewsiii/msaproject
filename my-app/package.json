@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
@@ -70,6 +70,7 @@
     "@storybook/react": "^6.3.7",
     "@types/graphql": "^14.5.0",
     "@types/react-router": "^5.1.16",
-    "apollo": "^2.33.6"
+    "apollo": "^2.33.6",
+    "jest": "^27.2.0"
   }
 }
