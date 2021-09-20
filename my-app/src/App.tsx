@@ -28,7 +28,7 @@ function App() {
      "Keqing","Klee","Lisa","Ningguang","Noelle","Qiqi","Razor","Rosaria","Sayu","Sucrose","Tartaglia","Traveler","Venti","Xiangling","Xiao",
      "Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli","Mona","Raiden Shogun","Kujou Sara","Aloy"
   ]
-  const regions = ["Mondstadt","Inazuma","Liyue"]
+  const regions = ["Mondstadt","Inazuma","Liyue","Snezhnaya"]
   return (
     <div className="App">
   

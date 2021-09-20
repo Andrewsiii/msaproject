@@ -59,7 +59,7 @@ export const RegionDescPage = ({ card }: FeedPageProps) => {
       >
           
          <Grid item xs={12} sm ={12} md = {6} lg = {6}>
-         <PictureCard cardMedia= {town.description} 
+         <PictureCard cardMedia= {town.imageURL}
          cardTitle= {town.name}   /> 
           </Grid>
           <Grid item xs={12} sm ={12} md = {6} lg = {6}

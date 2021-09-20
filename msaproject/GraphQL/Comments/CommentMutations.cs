@@ -35,7 +35,7 @@ namespace msaproject.GraphQL.Comments
         {
             var comment = await context.Comments.FindAsync(int.Parse(input.CommentId));
             comment.Content = input.Content ?? comment.Content;
-            context.Comments.Add(comment);
+            // context.Comments.Add(comment);
 
             await context.SaveChangesAsync(cancellationToken);
             

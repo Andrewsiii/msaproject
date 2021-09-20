@@ -43,7 +43,7 @@ export const Page = ({ card }: FeedPageProps) => {
   const [cards, setCards] = React.useState<JSX.Element[]>([]);
   const {loading, error, data} = useQuery<Characters>(CHARACTERS)
  useEffect(() => {
-  console.log(data)
+ 
   if(loading){
   <h1> Loading... </h1>
   }
@@ -64,6 +64,7 @@ export const Page = ({ card }: FeedPageProps) => {
           <Grid item xs={12} sm ={12} md = {6} lg = {6}
           >
            <CharacterText
+           charcomment={character.name}
             cardwep = {character.weapon}
             cardTitle={character.name}
             subHeader={character.vision}
@@ -79,9 +80,10 @@ export const Page = ({ card }: FeedPageProps) => {
          />
          </Grid>
          <Grid item xs={12} sm ={12} md = {12} lg = {12}
-          >
+          > 
+          
            <CommentBox
-            comment={character.description}
+            comment={character.name}
          />
          </Grid>
          
@@ -92,7 +94,7 @@ export const Page = ({ card }: FeedPageProps) => {
 }
  }, [data]
  );
- console.log(data)
+
 return (
    
     <div className={classes.bg}>

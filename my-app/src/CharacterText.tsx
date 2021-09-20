@@ -1,7 +1,7 @@
 
 import { Button, Card, CardActionArea, CardContent, CardHeader, Dialog, DialogTitle, Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import CardActions from '@material-ui/core/CardActions';
+
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
@@ -30,9 +30,11 @@ export interface CharacterTextProps {
     cardwep: string;
     cardback:string;
     food:string;
+    charcomment: string;
 };
 const CharacterText= ({cardwep,cardback, cardTitle, subHeader,food} : CharacterTextProps) => {
     const classes = useStyles();
+   
     return (
         <Card className={classes.root}>
           <CardContent>

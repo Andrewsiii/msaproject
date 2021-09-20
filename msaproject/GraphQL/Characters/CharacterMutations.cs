@@ -24,7 +24,8 @@ namespace msaproject.GraphQL.Characters
                 ImageURI = input.ImageURI,
                 food = input.food,
                 CharacterCard = input.CharacterCard,
-                Description = input.Description
+                Description = input.Description,
+                Nation = input.Nation
             };
             context.Characters.Add(character);
             await context.SaveChangesAsync(cancellationToken);
@@ -34,7 +35,7 @@ namespace msaproject.GraphQL.Characters
         public async Task<Character> EditCharacterAsync(EditCharacterInput input, [ScopedService] AppDbContext context, CancellationToken cancellationToken)
         {
             var character = await context.Characters.FindAsync(int.Parse(input.CharacterId));
-
+            character.Nation = input.Nation ?? character.Nation;
             character.Name = input.Name ?? character.Name;
             character.Vision = input.Vision ?? character.Vision;
             character.Background = input.Background ?? character.Background;
@@ -43,7 +44,7 @@ namespace msaproject.GraphQL.Characters
             character.food = input.food ?? character.food;
             character.Weapon = input.CharacterCard ?? character.CharacterCard;
             character.Description = input.Description ?? character.Description;
-
+            character.Nation = input.Nation ?? character.Nation;
             await context.SaveChangesAsync(cancellationToken);
             return character;
         }

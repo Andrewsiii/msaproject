@@ -10,7 +10,7 @@
        string? ImageURI,
         string? CharacterCard,
         string? food,
-        string? Description
-  
+        string? Description,
+        string? Nation
     );
 }

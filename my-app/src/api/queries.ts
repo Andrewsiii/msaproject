@@ -6,6 +6,7 @@ query Characters{
         cursor
     } 
     nodes{
+        Nation
         id
         name
         vision 
@@ -51,6 +52,7 @@ query towns{
     nodes{
         name
         description
+        imageURL
         comments{
         content
         created

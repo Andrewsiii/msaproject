@@ -26,7 +26,7 @@ namespace msaproject.GraphQL.Characters
             descriptor.Field(c => c.food).Type<NonNullType<StringType>>();
             descriptor.Field(c => c.CharacterCard).Type<NonNullType<StringType>>();
             descriptor.Field(c => c.Description).Type<NonNullType<StringType>>();
-
+            descriptor.Field(c => c.Nation).Type<NonNullType<StringType>>();
             descriptor
                 .Field(s => s.Towns)
                 .ResolveWith<Resolvers>(r => r.GetTowns(default!, default!, default))

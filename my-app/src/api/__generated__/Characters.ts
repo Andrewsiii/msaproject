@@ -44,7 +44,7 @@ export interface Characters_characters {
   /**
    * A flattened list of the nodes.
    */
-  nodes: Characters_characters_nodes[] | null;
+  nodes: Characters_characters_nodes[]  | null;
 }
 
 export interface Characters {
