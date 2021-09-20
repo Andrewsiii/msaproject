@@ -1,7 +1,6 @@
 import microsoftLogo from "./logos/microsoft_logo.svg";
 import facebookLogo from "./logos/facebook_logo.svg";
 import discordLogo from "./logos/discord_logo.svg";
-import facebookgroupLogo from "./logos/facebookgroup_logo.svg";
 import youtubeLogo from "./logos/youtube_logo.svg";
 import githubLogo from "./logos/github_logo.svg";
 import Twitter from "./logos/Twitter.svg"

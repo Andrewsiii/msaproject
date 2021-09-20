@@ -8,9 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
 import {
-  Divider,
   Link,
-  ListItemText,
 } from "@material-ui/core";
 
 export default function LiyueCard() {

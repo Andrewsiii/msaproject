@@ -1,9 +1,6 @@
-
-import { Button, Card, CardActionArea, CardContent, CardHeader, Dialog, DialogTitle, Divider } from '@material-ui/core';
+import { Card, CardContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
 import Typography from '@material-ui/core/Typography';
-import React, { useEffect } from 'react';
 import { Characters_characters_nodes_comments } from '../../api/__generated__/Characters';
 
 const useStyles = makeStyles({
