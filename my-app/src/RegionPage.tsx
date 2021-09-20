@@ -1,8 +1,5 @@
-import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import Card1 from "./components/Card/Card1"
-import Card2 from "./components/Card/Card2"
 import ButtonAppBar from './components/Header/Header';
 import InazumaCard from './components/Card/InazumaCard';
 import MondstadtCard from './components/Card/MondstadtCard';

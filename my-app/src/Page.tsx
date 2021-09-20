@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useQuery} from '@apollo/client';
-import { CircularProgress, Grid, Typography } from '@material-ui/core';
+import { CircularProgress, Grid } from '@material-ui/core';
 import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
 import CharacterText from './CharacterText';
 import PictureCard from './components/Card/PictureCard'
 import NHeader from './components/Header/Header';
-import { CHARACTER, CHARACTERS } from './api/queries';
+import {CHARACTERS } from './api/queries';
 import CharacterDesc from './components/Card/CharacterDesc';
-import CommentBox from './components/Card/CommentBox';
-import { Character, Character_character } from './api/__generated__/Character';
 import CommentCard from './components/Card/CommentBox';
 
 const useStyles = makeStyles({

@@ -8,7 +8,6 @@ import './fonts/Genshin.ttf';
 import {
   ApolloClient,
   ApolloProvider,
-  HttpLink,
   InMemoryCache
 } from '@apollo/client'
 const graphQLClient = new ApolloClient({

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Divider,
   Link,
@@ -10,8 +9,6 @@ import {
 } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-import AddBoxIcon from "@material-ui/icons/AddBox";
-
 const useStyles = makeStyles({
   list: {
     width: 250,

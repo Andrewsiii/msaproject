@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {gql, useQuery} from '@apollo/client';
+import { useQuery} from '@apollo/client';
 import { CircularProgress, Grid } from '@material-ui/core';
-import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
-import CharacterText from './CharacterText';
 import PictureCard from './components/Card/PictureCard'
 import NHeader from './components/Header/Header';
-import { CHARACTERS, TOWNS } from './api/queries';
+import { TOWNS } from './api/queries';
 import CharacterDesc from './components/Card/CharacterDesc';
-import CommentBox from './components/Card/CommentBox';
 import { towns, towns_towns_nodes } from './api/__generated__/towns';
 
 const useStyles = makeStyles({
