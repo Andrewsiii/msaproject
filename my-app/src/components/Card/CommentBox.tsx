@@ -53,7 +53,27 @@ const CommentCard = ({comments} : CharacterTextProps) => {
     const handleChange = (e: any)  => {
       setContent(e.target.value);
     };
-     
+   /**  const handleSubmit = async() => {
+      if (projectName !== "" && isGithubUrl(githubUrl)) {
+          console.log({"projectName": projectName, "githubUrl": githubUrl, "Description": description });
+
+          try {
+              await addProject({variables: {
+                  name: projectName,
+                  description: description,
+                  link: githubUrl,
+                  year: year,
+              }})
+              setSubmit(true)
+          } catch(e) {
+              console.log(e)
+          }
+      }else{
+          setHasFocus(true);
+      }
+
+  };
+  */
     var aster = comments.map(comment => {
       return (<Card className={classes.root}>
         <CardContent>
@@ -63,10 +83,11 @@ const CommentCard = ({comments} : CharacterTextProps) => {
           </CardContent>
           </Card>)
     })
+   
+    
     
     return (<div> 
       <Typography className={classes.title}> Comments: </Typography>
-      
           {aster}
           <Card className={classes.root}>
         <CardContent>
