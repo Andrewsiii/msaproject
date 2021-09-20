@@ -6,7 +6,7 @@ query Characters{
         cursor
     } 
     nodes{
-        Nation
+        nation
         id
         name
         vision 
@@ -29,6 +29,7 @@ query Characters{
 export const CHARACTER = gql`
     query Character($id: ID){
         character(id: $id){
+        nation
         name
         vision 
         weapon 

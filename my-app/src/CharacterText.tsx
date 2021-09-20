@@ -3,6 +3,7 @@ import { Button, Card, CardActionArea, CardContent, CardHeader, Dialog, DialogTi
 import { makeStyles } from '@material-ui/core/styles';
 
 import Typography from '@material-ui/core/Typography';
+import { Characters_characters_nodes_comments } from './api/__generated__/Characters';
 
 const useStyles = makeStyles({
     root: {
@@ -30,7 +31,7 @@ export interface CharacterTextProps {
     cardwep: string;
     cardback:string;
     food:string;
-    charcomment: string;
+
 };
 const CharacterText= ({cardwep,cardback, cardTitle, subHeader,food} : CharacterTextProps) => {
     const classes = useStyles();
@@ -38,6 +39,7 @@ const CharacterText= ({cardwep,cardback, cardTitle, subHeader,food} : CharacterT
     return (
         <Card className={classes.root}>
           <CardContent>
+          
             <Typography className={classes.title} color="textSecondary" gutterBottom>
               {cardTitle}
             </Typography>

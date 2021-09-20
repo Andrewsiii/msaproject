@@ -14,6 +14,7 @@ export interface Character_character_comments {
 
 export interface Character_character {
   __typename: "Character";
+  nation: string;
   name: string;
   vision: string;
   weapon: string;
