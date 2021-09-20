@@ -23,6 +23,7 @@ export interface Characters_characters_nodes_comments {
 
 export interface Characters_characters_nodes {
   __typename: "Character";
+  nation: string;
   id: string;
   name: string;
   vision: string;
@@ -44,7 +45,7 @@ export interface Characters_characters {
   /**
    * A flattened list of the nodes.
    */
-  nodes: Characters_characters_nodes[]  | null;
+  nodes: Characters_characters_nodes[] | null;
 }
 
 export interface Characters {

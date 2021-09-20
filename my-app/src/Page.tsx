@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {gql, useQuery} from '@apollo/client';
-import { CircularProgress, Grid } from '@material-ui/core';
+import { useQuery} from '@apollo/client';
+import { CircularProgress, Grid, Typography } from '@material-ui/core';
 import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
 import CharacterText from './CharacterText';
 import PictureCard from './components/Card/PictureCard'
 import NHeader from './components/Header/Header';
-import { CHARACTERS } from './api/queries';
+import { CHARACTER, CHARACTERS } from './api/queries';
 import CharacterDesc from './components/Card/CharacterDesc';
 import CommentBox from './components/Card/CommentBox';
+import { Character, Character_character } from './api/__generated__/Character';
+import CommentCard from './components/Card/CommentBox';
 
 const useStyles = makeStyles({
 
@@ -21,7 +23,7 @@ const useStyles = makeStyles({
   title: {
     color:"#FFFFFF",
     flexGrow: 1,
-    fontSize: '4rem',
+    fontSize: '2rem',
     fontFamily:'Genshin',
   },
   container:{
@@ -41,12 +43,10 @@ const useStyles = makeStyles({
 export const Page = ({ card }: FeedPageProps) => {
   const classes = useStyles();
   const [cards, setCards] = React.useState<JSX.Element[]>([]);
+  
   const {loading, error, data} = useQuery<Characters>(CHARACTERS)
  useEffect(() => {
- 
-  if(loading){
-  <h1> Loading... </h1>
-  }
+  
   if(!loading && !error) {
     setCards(data!.characters!.nodes!.map((character : Characters_characters_nodes) => {
         return <Grid
@@ -64,8 +64,8 @@ export const Page = ({ card }: FeedPageProps) => {
           <Grid item xs={12} sm ={12} md = {6} lg = {6}
           >
            <CharacterText
-           charcomment={character.name}
-            cardwep = {character.weapon}
+            
+            cardwep = {character.weapon}  
             cardTitle={character.name}
             subHeader={character.vision}
             cardback={character.background}
@@ -80,13 +80,14 @@ export const Page = ({ card }: FeedPageProps) => {
          />
          </Grid>
          <Grid item xs={12} sm ={12} md = {12} lg = {12}
-          > 
-          
-           <CommentBox
-            comment={character.name}
+          >
+            
+           <CommentCard
+           card={1}
+            comments={character.comments}
          />
          </Grid>
-         
+        
          </Grid>
        
     }))
@@ -94,7 +95,7 @@ export const Page = ({ card }: FeedPageProps) => {
 }
  }, [data]
  );
-
+ 
 return (
    
     <div className={classes.bg}>
@@ -103,7 +104,7 @@ return (
    
      {cards.length === 0 ? <CircularProgress /> :cards[card]} 
     
-     
+    
     
    
         </div>
