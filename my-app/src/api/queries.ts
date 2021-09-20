@@ -1,11 +1,12 @@
 import { gql } from "@apollo/client";
 export const CHARACTERS = gql`
 query Characters{
-  characters(first:10){
+  characters(first:40){
     edges{
         cursor
     } 
     nodes{
+        Nation
         id
         name
         vision 

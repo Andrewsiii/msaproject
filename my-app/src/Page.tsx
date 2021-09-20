@@ -64,6 +64,7 @@ export const Page = ({ card }: FeedPageProps) => {
           <Grid item xs={12} sm ={12} md = {6} lg = {6}
           >
            <CharacterText
+           charcomment={character.name}
             cardwep = {character.weapon}
             cardTitle={character.name}
             subHeader={character.vision}

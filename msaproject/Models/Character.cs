@@ -24,6 +24,7 @@ namespace msaproject.Models
         public string CharacterCard { get; set; } = null!;
         public string food { get; set; } = null!;
         public string Description { get; set; }
+        public string Nation { get; set; }
         public ICollection<Town> Towns { get; set; } = new List<Town>();
         public ICollection<Comment> Comments { get; set; } = new List<Comment>();
 
