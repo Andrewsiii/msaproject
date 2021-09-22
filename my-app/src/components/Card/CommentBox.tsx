@@ -46,11 +46,10 @@ const useStyles = makeStyles({
     },
   });
 export interface CharacterTextProps {
-  card: number;
   comments: Characters_characters_nodes_comments[]
   charid: string;
 };
-const CommentCard = ({comments,charid,card} : CharacterTextProps) => {
+const CommentCard = ({comments,charid} : CharacterTextProps) => {
     const classes = useStyles();
     const [content,setContent] = useState("")
    
@@ -66,10 +65,9 @@ const handleSubmit = async() => {
              
                   content: content,
                   characterId: charid,
-                  townId: charid,
+                  townId: "1",
               
               }})
-              console.log("done")
           } catch(e) {
            
           }
