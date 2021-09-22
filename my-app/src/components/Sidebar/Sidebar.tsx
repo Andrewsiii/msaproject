@@ -6,6 +6,7 @@ import {
   ListItemIcon,
   ListItemText,
   makeStyles,
+  Typography,
 } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
@@ -15,6 +16,7 @@ const useStyles = makeStyles({
     width: 250,
   },
   listText: {
+    fontSize:'3rem',
     fontFamily:'Genshin',
     color: "black",
   },
@@ -63,7 +65,7 @@ export const Sidebar = () => {
         <Divider />
         {regions.map((regions) =>(
         <ListItem button href={regions} component={Link}>
-        <ListItemText className={classes.listText} primary={regions} />
+        <ListItemText className={classes.listText}  primary={regions}/>
         </ListItem>
          ))}
         </List>

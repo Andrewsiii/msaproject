@@ -39,7 +39,7 @@ const useStyles = makeStyles({
   
    if(!loading && !error) {
      setCards(data!.characters!.nodes!.map((character : Characters_characters_nodes) => {
-         return <CharacterListCard cardMedia= {character.characterCard} 
+         return <CharacterListCard  cardMedia= {character.characterCard} 
        cardTitle= {character.name} 
        cardVision={character.vision} /> 
       
@@ -54,7 +54,7 @@ const useStyles = makeStyles({
      <div className={classes.bg}>
      <NHeader/>
    
-     {cards.length === 0 ? <CircularProgress /> : <CharacterList cards={cards} cols={window.innerWidth / 200} />}
+     {cards.length === 0 ? <CircularProgress /> : <CharacterList  cards={cards} cols={window.innerWidth / 200} />}
      
          </div>
    );

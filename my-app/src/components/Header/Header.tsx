@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     bar:{
       background:'transparent'
+    },
+    MuiDrawer: {
+      backgroundColor: "primary"
     }
     
   }),
@@ -58,9 +61,9 @@ const theme = createTheme({
     <div className={classes.root}>
       <AppBar position="static"   className={classes.bar} >
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton}  aria-label="menu" onClick={toggleSideBar}>
-            <MenuIcon style={{ color: "#FFFFFF" }} />
-            <Drawer color="primary" anchor="left" open={sideBar} onClose={toggleSideBar}>
+          <IconButton edge="start" className={classes.menuButton}   aria-label="menu" onClick={toggleSideBar}>
+            <MenuIcon color="primary" />
+            <Drawer anchor="left" open={sideBar} onClose={toggleSideBar}>
                             <Sidebar />
                         </Drawer>
                     </IconButton>
