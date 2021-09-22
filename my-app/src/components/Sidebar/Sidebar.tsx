@@ -6,14 +6,17 @@ import {
   ListItemIcon,
   ListItemText,
   makeStyles,
+  Typography,
 } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 const useStyles = makeStyles({
   list: {
     width: 250,
   },
   listText: {
+    fontSize:'3rem',
     fontFamily:'Genshin',
     color: "black",
   },
@@ -26,6 +29,7 @@ const names = [
   "Keqing","Klee","Lisa","Ningguang","Noelle","Qiqi","Razor","Rosaria","Sayu","Sucrose","Tartaglia","Traveler","Venti","Xiangling","Xiao",
   "Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli","Mona","Raiden Shogun","Kujou Sara","Aloy"
 ]
+const regions = ["Mondstadt","Inazuma","Liyue","Snezhnaya"]
 export const Sidebar = () => {
   const classes = useStyles();
 
@@ -51,7 +55,20 @@ export const Sidebar = () => {
         <ListItemText className={classes.listText} primary={name} />
         </ListItem>
         ))}
-      </List>
+        <ListItem button href="/region" component={Link} >
+          <ListItemIcon>
+            <FormatListBulletedIcon />
+          </ListItemIcon>
+          <ListItemText className={classes.listText} primary="Region" />
+          
+        </ListItem>
+        <Divider />
+        {regions.map((regions) =>(
+        <ListItem button href={regions} component={Link}>
+        <ListItemText className={classes.listText}  primary={regions}/>
+        </ListItem>
+         ))}
+        </List>
     </div>
   );
 };

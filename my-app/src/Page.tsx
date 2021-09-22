@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useEffect, useState } from 'react';
+import { createTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import { useQuery} from '@apollo/client';
 import { CircularProgress, Grid, TextField } from '@material-ui/core';
 import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
 import CharacterText from './CharacterText';
 import PictureCard from './components/Card/PictureCard'
-import NHeader from './components/Header/Header';
+import {NHeader} from './components/Header/Header';
 import {CHARACTERS } from './api/queries';
 import CharacterDesc from './components/Card/CharacterDesc';
 import CommentCard from './components/Card/CommentBox';
@@ -41,7 +41,7 @@ const useStyles = makeStyles({
 export const Page = ({ card }: FeedPageProps) => {
   const classes = useStyles();
   const [cards, setCards] = React.useState<JSX.Element[]>([]);
-  
+  const [darkMode,setDarkMode] = useState(false)
   const {loading, error, data} = useQuery<Characters>(CHARACTERS)
  useEffect(() => {
   
@@ -88,15 +88,21 @@ export const Page = ({ card }: FeedPageProps) => {
          </Grid>
          
          </Grid>
-       
+        
     }))
     
 }
  }, [data]
  );
- 
+ const darkTheme = createTheme({
+   palette: {
+     type: "dark"
+     
+   }
+ })
+ const lightTheme = createTheme({})
 return (
-   
+   <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
     <div className={classes.bg}>
     <NHeader/>
     
@@ -107,5 +113,6 @@ return (
     
    
         </div>
+        </ThemeProvider>
   );
   }; 

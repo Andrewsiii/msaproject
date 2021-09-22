@@ -5,19 +5,25 @@ import {
 import { Collapse, createStyles, IconButton} from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ButtonAppBar from "./components/Header/Header"
+import {NHeader} from "./components/Header/Header"
+import {ThemeProvider} from "styled-components";
+import { lightTheme, darkTheme } from "./components/Themes"
+
 export default function FrontPage() {
-  
+ 
+
+
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
   useEffect(() => {
     setChecked(true);
   }, []);
-
+  
     return (
-    
+     
       <div className={classes.bg}>
-          <ButtonAppBar/>
+          <NHeader/>
+         
       <div className={classes.root} id ="header">
           
         <div className={classes.container}>
@@ -37,6 +43,8 @@ export default function FrontPage() {
             
       </div>
       </div>
+   
+     
     );
   }
   
@@ -84,7 +92,7 @@ createStyles({
   container: {
     textAlign: 'center',
   },
-  bg:{
+  bg: {
     minHeight: '100vh',
     backgroundImage:`url(${process.env.PUBLIC_URL+'/assets/bg.png'})`,
     backgroundRepeat:"no-repeat",

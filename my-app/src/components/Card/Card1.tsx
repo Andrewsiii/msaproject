@@ -18,11 +18,12 @@ export default function Card1() {
     <CardMedia
       className={classes.media}
       image="/assets/genshin_30_4K.jpeg"
-      title="Contemplative Reptile"
+      
     />
     
     <CardContent>
       <Typography gutterBottom variant="h5" component="h2" className = {classes.title}
+      color="primary"
       >
         Characters
       </Typography>

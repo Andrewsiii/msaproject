@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import Card1 from "./components/Card/Card1"
 import Card2 from "./components/Card/Card2"
-import ButtonAppBar from './components/Header/Header';
+import {NHeader} from './components/Header/Header';
 
 const useStyles = makeStyles({
 
@@ -31,7 +31,7 @@ export const HomePage = () => {
     <div className={classes.bg}>
       
       
-                 <ButtonAppBar/>
+                 <NHeader/>
             
         <Grid container
        

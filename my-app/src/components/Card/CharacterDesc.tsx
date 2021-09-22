@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     },
   });
 export interface CharacterTextProps {
-   
+  /** The content of the card */
    Description:string
 };
 const CharacterDesc= ({Description} : CharacterTextProps) => {
