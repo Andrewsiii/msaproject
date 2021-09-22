@@ -4,7 +4,7 @@ import { CircularProgress} from '@material-ui/core';
 import { useQuery } from '@apollo/client';
 import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
 import  CharacterListCard  from './components/Card/CharacterListCard';
-import NHeader from './components/Header/Header';
+import {NHeader} from './components/Header/Header';
 
 import CharacterList from './components/Card/CharacterList';
 import { CHARACTERS } from './api/queries';

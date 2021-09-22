@@ -5,7 +5,7 @@ import {
 import { Collapse, createStyles, IconButton} from "@material-ui/core";
 import { makeStyles, Theme } from "@material-ui/core";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import ButtonAppBar from "./components/Header/Header"
+import {NHeader} from "./components/Header/Header"
 export default function FrontPage() {
   
   const classes = useStyles();
@@ -17,7 +17,7 @@ export default function FrontPage() {
     return (
     
       <div className={classes.bg}>
-          <ButtonAppBar/>
+          <NHeader/>
       <div className={classes.root} id ="header">
           
         <div className={classes.container}>

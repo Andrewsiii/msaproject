@@ -26,6 +26,7 @@ const names = [
   "Keqing","Klee","Lisa","Ningguang","Noelle","Qiqi","Razor","Rosaria","Sayu","Sucrose","Tartaglia","Traveler","Venti","Xiangling","Xiao",
   "Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli","Mona","Raiden Shogun","Kujou Sara","Aloy"
 ]
+const regions = ["Mondstadt","Inazuma","Liyue","Snezhnaya"]
 export const Sidebar = () => {
   const classes = useStyles();
 
@@ -51,7 +52,14 @@ export const Sidebar = () => {
         <ListItemText className={classes.listText} primary={name} />
         </ListItem>
         ))}
-      </List>
+        
+        <Divider />
+        {regions.map((regions) =>(
+        <ListItem button href={regions} component={Link}>
+        <ListItemText className={classes.listText} primary={regions} />
+        </ListItem>
+         ))}
+        </List>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { CircularProgress, Grid, TextField } from '@material-ui/core';
 import { Characters, Characters_characters_nodes } from './api/__generated__/Characters';
 import CharacterText from './CharacterText';
 import PictureCard from './components/Card/PictureCard'
-import NHeader from './components/Header/Header';
+import {NHeader} from './components/Header/Header';
 import {CHARACTERS } from './api/queries';
 import CharacterDesc from './components/Card/CharacterDesc';
 import CommentCard from './components/Card/CommentBox';

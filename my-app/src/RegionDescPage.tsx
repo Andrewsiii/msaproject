@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useQuery} from '@apollo/client';
 import { CircularProgress, Grid } from '@material-ui/core';
 import PictureCard from './components/Card/PictureCard'
-import NHeader from './components/Header/Header';
+import {NHeader} from './components/Header/Header';
 import { TOWNS } from './api/queries';
 import CharacterDesc from './components/Card/CharacterDesc';
 import { towns, towns_towns_nodes } from './api/__generated__/towns';

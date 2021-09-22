@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import ButtonAppBar from './components/Header/Header';
+import {NHeader} from './components/Header/Header';
 import InazumaCard from './components/Card/InazumaCard';
 import MondstadtCard from './components/Card/MondstadtCard';
 import LiyueCard from './components/Card/LiyueCard';
@@ -32,7 +32,7 @@ export const RegionPage = () => {
     <div className={classes.bg}>
       
       
-                 <ButtonAppBar/>
+                 <NHeader/>
             
         <Grid container
        

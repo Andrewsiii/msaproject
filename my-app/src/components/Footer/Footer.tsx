@@ -1,7 +1,7 @@
 import React from "react";
 import { createStyles, Grid, IconButton, makeStyles, Theme } from "@material-ui/core";
 import genshinImpact from "./logos/Genshin_Impact_logo.svg"
-import { SOCIAL_MEDIA } from "./resources";
+import { SOCIAL_MEDIA } from "../resources";
 export interface SocialIconProps {
   name: string;
   url: string;

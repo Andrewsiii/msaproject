@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function NHeader() {
+export const NHeader = () => {
   const classes = useStyles();
   const [sideBar, setSideBar] = useState(false);
   const toggleSideBar = () => {
