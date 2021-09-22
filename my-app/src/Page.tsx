@@ -81,7 +81,8 @@ export const Page = ({ card }: FeedPageProps) => {
           >
             
            <CommentCard
-           card={1}
+           charid={character.id}
+          
             comments={character.comments}
          />
          </Grid>

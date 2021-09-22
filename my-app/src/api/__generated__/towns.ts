@@ -23,6 +23,7 @@ export interface towns_towns_nodes_comments {
 
 export interface towns_towns_nodes {
   __typename: "Town";
+  id: string;
   name: string;
   description: string;
   imageURL: string;

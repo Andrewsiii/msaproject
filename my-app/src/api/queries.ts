@@ -15,7 +15,7 @@ query Characters{
         imageURI
         food
         characterCard
-        description
+        description 
         comments{
           content
           created
@@ -51,6 +51,7 @@ query towns{
         cursor
     } 
     nodes{
+        id
         name
         description
         imageURL
