@@ -1,7 +1,10 @@
+import { useMutation } from '@apollo/client';
 import { Button, Card, CardContent, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { useState } from 'react';
+import { ADD_COMMENT } from '../../api/mutations';
+import { AddComment } from '../../api/__generated__/AddComment';
 import { Characters_characters_nodes_comments } from '../../api/__generated__/Characters';
 
 const useStyles = makeStyles({
@@ -45,35 +48,35 @@ const useStyles = makeStyles({
 export interface CharacterTextProps {
   card: number;
   comments: Characters_characters_nodes_comments[]
+  charid: string;
 };
-const CommentCard = ({comments} : CharacterTextProps) => {
+const CommentCard = ({comments,charid,card} : CharacterTextProps) => {
     const classes = useStyles();
     const [content,setContent] = useState("")
    
     const handleChange = (e: any)  => {
       setContent(e.target.value);
     };
-   /**  const handleSubmit = async() => {
-      if (projectName !== "" && isGithubUrl(githubUrl)) {
-          console.log({"projectName": projectName, "githubUrl": githubUrl, "Description": description });
-
+const [addComment] = useMutation<AddComment>(ADD_COMMENT)
+const handleSubmit = async() => {
+  
           try {
-              await addProject({variables: {
-                  name: projectName,
-                  description: description,
-                  link: githubUrl,
-                  year: year,
+           
+              await addComment({variables: {
+             
+                  content: content,
+                  characterId: charid,
+                  townId: charid,
+              
               }})
-              setSubmit(true)
+              console.log("done")
           } catch(e) {
-              console.log(e)
+           
           }
-      }else{
-          setHasFocus(true);
-      }
+      } 
 
-  };
-  */
+ 
+  
     var aster = comments.map(comment => {
       return (<Card className={classes.root}>
         <CardContent>
@@ -100,7 +103,7 @@ const CommentCard = ({comments} : CharacterTextProps) => {
     }} variant="filled"
     value ={content}
     onChange = {handleChange}/>
-   <Button variant="contained" onClick={handleChange} size="large">Add Comment</Button>
+   <Button variant="contained" onClick={handleSubmit} size="large">Add Comment</Button>
           </CardContent>
           </Card>
           

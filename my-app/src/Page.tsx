@@ -81,6 +81,7 @@ export const Page = ({ card }: FeedPageProps) => {
           >
             
            <CommentCard
+           charid={character.id}
            card={1}
             comments={character.comments}
          />
