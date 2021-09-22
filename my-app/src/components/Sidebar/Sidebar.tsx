@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/Home";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -52,7 +53,13 @@ export const Sidebar = () => {
         <ListItemText className={classes.listText} primary={name} />
         </ListItem>
         ))}
-        
+        <ListItem button href="/region" component={Link} >
+          <ListItemIcon>
+            <FormatListBulletedIcon />
+          </ListItemIcon>
+          <ListItemText className={classes.listText} primary="Region" />
+          
+        </ListItem>
         <Divider />
         {regions.map((regions) =>(
         <ListItem button href={regions} component={Link}>

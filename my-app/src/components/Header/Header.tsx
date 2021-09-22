@@ -7,8 +7,9 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Drawer, Link } from '@material-ui/core';
 import { Sidebar } from '../Sidebar/Sidebar';
-
-
+import "./Header.css";
+import { ThemeProvider } from "@material-ui/styles";
+import { createTheme } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       fontFamily:'Genshin',
       flexGrow: 1,
-      color:'#FFFF',
+     
       textSize:200
     },
     button: {
@@ -30,8 +31,9 @@ const useStyles = makeStyles((theme: Theme) =>
      color: '#FFFF'
     },
     bar:{
-      backgroundColor: "transparent"
+      background:'transparent'
     }
+    
   }),
 );
 
@@ -41,22 +43,38 @@ export const NHeader = () => {
   const toggleSideBar = () => {
     setSideBar(!sideBar);
 };
+const [darkMode, setDarkMode] = useState(false);
+const theme = createTheme({
+  palette: {
+    primary:{
+      main: darkMode ? '#3c3c41' : "#FFFFFF"
+    }
+    
+  }
+});
+
   return (
+    <ThemeProvider theme={theme}>
     <div className={classes.root}>
-      <AppBar position="static" className={classes.bar} >
+      <AppBar position="static"   className={classes.bar} >
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton}  aria-label="menu" onClick={toggleSideBar}>
             <MenuIcon style={{ color: "#FFFFFF" }} />
-            <Drawer anchor="left" open={sideBar} onClose={toggleSideBar}>
+            <Drawer color="primary" anchor="left" open={sideBar} onClose={toggleSideBar}>
                             <Sidebar />
                         </Drawer>
                     </IconButton>
-          <Button className={classes.title}  href="/home" component={Link} >
+          <Button className={classes.title} color='primary' href="/home" component={Link} >
             Genshin Impact
           </Button>
-          <Button className= {classes.button}>Login</Button>
+          <label className="switch">
+            <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
+            <span className="slider round"> </span>
+          </label>
+          
         </Toolbar>
       </AppBar>
     </div>
+    </ThemeProvider>
   );
 }

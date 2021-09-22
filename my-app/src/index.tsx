@@ -10,19 +10,25 @@ import {
   ApolloProvider,
   InMemoryCache
 } from '@apollo/client'
+
+
 const graphQLClient = new ApolloClient({
   
   uri: "https://msa-proj.azurewebsites.net/graphql/",
   
   cache: new InMemoryCache()
 });
+
 ReactDOM.render(
+  
   <BrowserRouter>
   <ApolloProvider client={graphQLClient}>
       <React.StrictMode>
     <App />
     </React.StrictMode>
     </ApolloProvider>
-  </BrowserRouter>,
+  </BrowserRouter>
+
+  ,
   document.getElementById("root")
 );

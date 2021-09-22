@@ -1,16 +1,19 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import CharacterDesc from './CharacterDesc';
 
 
 export default {
     title: 'UI Components/CharacterDesc',
     component: CharacterDesc,
-} as Meta;
+    argTypes: {
+        Description: { control: "Change Description" },
+      },
+} as ComponentMeta<typeof CharacterDesc>;
 
-const Template: Story = (args) => <CharacterDesc Description={'Description Here'}  />;
+const Template: ComponentStory<typeof CharacterDesc> = (args) => <CharacterDesc {...args}  />;
 
 export const CharacterDescExample = Template.bind({});
 CharacterDescExample.args = {
-    description: "description2"
+    Description: "description"
 };
