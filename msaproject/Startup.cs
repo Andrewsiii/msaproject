@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,14 +6,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Logging;
 using msaproject.Data;
 using msaproject.GraphQL.Characters;
 using msaproject.GraphQL.Comments;
 using msaproject.GraphQL.Towns;
 using msatown.GraphQL.Characters;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 
 namespace msaproject
 {
@@ -40,20 +41,7 @@ namespace msaproject
                 });
             });
             services.AddPooledDbContextFactory<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]));
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
-        {
-            options.TokenValidationParameters =
-            new TokenValidationParameters
-                    {
-                        ValidIssuer = "Genshin",
-                        ValidAudience = "Genshin-USER",
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = signingKey
-                    };
-        });
             services
                 .AddGraphQLServer()
                 .AddQueryType(d => d.Name("Query"))
@@ -67,7 +55,6 @@ namespace msaproject
                 .AddType<TownType>()
                 .AddType<CharacterType>();
         }
-       
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -81,7 +68,7 @@ namespace msaproject
 
             app.UseRouting();
             app.UseCors(_policyName);
-            app.UseAuthentication();
+            
 
             app.UseEndpoints(endpoints =>
             {
