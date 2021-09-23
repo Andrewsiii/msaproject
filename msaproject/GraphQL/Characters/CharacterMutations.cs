@@ -1,8 +1,12 @@
 ﻿using HotChocolate;
+using HotChocolate.AspNetCore;
+using HotChocolate.AspNetCore.Authorization;
+using System.IdentityModel.Tokens.Jwt;
 using HotChocolate.Types;
 using msaproject.Data;
 using msaproject.Extensions;
 using msaproject.Models;
+using Octokit;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -48,5 +52,6 @@ namespace msaproject.GraphQL.Characters
             await context.SaveChangesAsync(cancellationToken);
             return character;
         }
+        
     }
 }
